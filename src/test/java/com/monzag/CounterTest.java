@@ -16,6 +16,11 @@ class CounterTest {
         counter = new Counter<>();
     }
 
+    @Test
+    void testCounter() {
+        Integer expect = 4;
+        assertEquals(expect, counter.countWinner(generateList(6), 3));
+    }
 
     private ArrayList<Integer> generateList(Integer n) {
         ArrayList<Integer> players = new ArrayList<>();
