@@ -22,6 +22,12 @@ class CounterTest {
         assertEquals(expect, counter.countWinner(generateList(6), 3));
     }
 
+    @Test
+    void testCounter2() {
+        Integer expect = 1;
+        assertEquals(expect, counter.countWinner(generateList(6), 50));
+    }
+
     private ArrayList<Integer> generateList(Integer n) {
         ArrayList<Integer> players = new ArrayList<>();
         for (Integer i = 1; i < n ; i++) {
