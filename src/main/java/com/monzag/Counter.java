@@ -4,15 +4,18 @@ import java.util.ArrayList;
 
 public class Counter<T> {
 
-//    k - counter
+    private static final int FIRST_INDEX = 0;
+    private static final int ONE_ELEMENT_LIST = 1;
+    private static final int INDEX_CORRECTION = 1;
 
+//    k - counter
     public T countWinner(ArrayList<T> players, Integer k) {
-        int indexToRemove = 0;
-        while (players.size() > 1) {
-            indexToRemove = (indexToRemove + k - 1) % players.size();
+        int indexToRemove = FIRST_INDEX;
+        while (players.size() > ONE_ELEMENT_LIST) {
+            indexToRemove = (indexToRemove + k - INDEX_CORRECTION) % players.size();
             players.remove(indexToRemove);
         }
 
-        return players.get(0);
+        return players.get(FIRST_INDEX);
     }
 }
