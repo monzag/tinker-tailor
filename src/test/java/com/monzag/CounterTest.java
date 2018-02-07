@@ -40,6 +40,11 @@ class CounterTest {
         assertThrows(IndexOutOfBoundsException.class, () -> counter.countWinner(emptyList, 1));
     }
 
+    @Test
+    void testCounterForZero() {
+        assertThrows(IndexOutOfBoundsException.class, () -> counter.countWinner(generateList(6), 0));
+    }
+
     private ArrayList<Integer> generateList(Integer n) {
         ArrayList<Integer> players = new ArrayList<>();
         for (Integer i = 1; i < n ; i++) {
