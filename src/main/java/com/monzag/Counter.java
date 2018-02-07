@@ -9,7 +9,7 @@ public class Counter<T> {
     private static final int INDEX_CORRECTION = 1;
 
 //    k - counter
-    public T countWinner(ArrayList<T> players, Integer k) {
+    public T countWinner(ArrayList<T> players, Integer k) throws IndexOutOfBoundsException {
         int indexToRemove = FIRST_INDEX;
         while (players.size() > ONE_ELEMENT_LIST) {
             indexToRemove = (indexToRemove + k - INDEX_CORRECTION) % players.size();
